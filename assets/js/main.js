@@ -10,7 +10,7 @@ $(document).ready(function () {
     });
 });
 
-// tsParticles background
+// tsParticles background for particles effect
 document.addEventListener("DOMContentLoaded", () => {
     tsParticles.load("particles", {
         fullScreen: { enable: false },
