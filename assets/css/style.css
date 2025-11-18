@@ -1,61 +1,18 @@
-/* -- Imports --- */
+/* --- Imports --- */
 @import url('http://fonts.cdnfonts.com/css/marsek');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap');
 
-
-/* ------Global Reset & Base---- */
+/* --- Reset & Base --- */
 * {
     margin: 0;
     padding: 0;
-    border: 0;
-    font: inherit;
-    font-size: 100%;
     box-sizing: border-box;
-    vertical-align: baseline;
 }
 
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-    display: block;
-    
-}
-
-
-ol, ul {
-    list-style: none;
-}
-
-
-blockquote, q {
-    quotes: none;
-}
-
-
-blockquote::before,
-blockquote::after,
-q::before,
-q::after {
-    content: '';
-}
-
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-
-/* --------Page Layout-------- */
 html, body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    margin: 0;
-    padding: 0;
-}
-
-
-body {
     background: #000010;
     font-family: 'Montserrat', sans-serif;
     color: #fff;
@@ -63,81 +20,52 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-
-/* -----Particles Container----------- */
+/* --- Particles Container --- */
 #particles {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Particles behind text */
+    z-index: -1; /* Behind content */
     overflow: hidden;
 }
 
-
-.pg-canvas {
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-
-/* Optional subtle particle animation */
-#particles {
-    animation: particleAnimation 30s infinite linear;
-}
-
-
-@keyframes particleAnimation {
-    0% { opacity: 0.8; }
-    100% { opacity: 1; }
-}
-
-
-/* -----Intro Section-------- */
+/* --- Intro Section --- */
 #intro {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 1; /* Ensure text is above particles */
+    z-index: 1; /* Above particles */
     padding: 0 20px;
 }
 
-
-/* --------Typography-------- */
+/* --- Typography --- */
 h2#site-header {
     font-family: 'Marsek', sans-serif;
     font-weight: 900;
-    font-size: 6vw; /* Responsive font size */
+    font-size: 6vw;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: 10px;
 }
 
-
 h3#typed {
     font-family: 'Fira Code', monospace;
     font-weight: 400;
-    font-size: 3vw; /* Responsive font size */
+    font-size: 3vw;
     color: #fff;
     letter-spacing: 0.05em;
     margin-bottom: 20px;
 }
 
-
 .typed-cursor {
     font-size: 40px;
     color: #715cbd;
 }
-
 
 h1::after {
     content: '';
@@ -148,7 +76,6 @@ h1::after {
     margin: 30px auto;
 }
 
-
 p {
     font-size: 1.5rem;
     font-family: 'Roboto', sans-serif;
@@ -157,12 +84,11 @@ p {
     line-height: 1.6;
 }
 
-
-/* -----Buttons--------- */
+/* --- Buttons --- */
 .btn {
     padding: 12px 24px;
     background-color: #715cbd;
-    color: white;
+    color: #fff;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
@@ -170,54 +96,26 @@ p {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-
 .btn:hover {
     background-color: #57408e;
     transform: scale(1.05);
 }
 
-
 .btn:focus {
-    outline: 3px solid #715cbd; /* Accessibility */
+    outline: 3px solid #715cbd;
 }
 
-
-/* --- Responsive Design -------- */
+/* --- Responsive Design --- */
 @media only screen and (max-width: 1000px) {
-    h2#site-header {
-        font-size: 8vw;
-    }
-
-    h3#typed {
-        font-size: 5vw;
-    }
-
-    h1::after {
-        height: 4px;
-    }
-
-    p {
-        font-size: 1.2rem;
-        line-height: 1.5;
-    }
-
-    .btn {
-        font-size: 0.9rem;
-        padding: 10px 20px;
-    }
+    h2#site-header { font-size: 8vw; }
+    h3#typed { font-size: 5vw; }
+    h1::after { height: 4px; }
+    p { font-size: 1.2rem; line-height: 1.5; }
+    .btn { font-size: 0.9rem; padding: 10px 20px; }
 }
 
 @media only screen and (max-width: 600px) {
-    h2#site-header {
-        font-size: 10vw;
-    }
-
-    h3#typed {
-        font-size: 6vw;
-    }
-
-    p {
-        font-size: 1rem;
-        line-height: 1.4;
-    }
+    h2#site-header { font-size: 10vw; }
+    h3#typed { font-size: 6vw; }
+    p { font-size: 1rem; line-height: 1.4; }
 }
