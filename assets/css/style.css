@@ -1,58 +1,36 @@
+/* -- Imports---*/
 @import url('http://fonts.cdnfonts.com/css/marsek');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap');
+
+/* ------Global Reset & Base---- */
 * {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
+    font-size: 100%;
+    box-sizing: border-box;
     vertical-align: baseline;
 }
 
-h2#site-header {
-    font-family: 'Marsek', sans-serif;
-    font-weight: 900;
-}
-
-h3#typed {
-    font-family: 'Fira Code', monospace;
-    font-weight: 10;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
     display: block;
 }
 
-body {
-    line-height: 1;
-}
-
-ol,
-ul {
+ol, ul {
     list-style: none;
 }
 
-blockquote,
-q {
+blockquote, q {
     quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
     content: '';
-    content: none;
 }
 
 table {
@@ -60,14 +38,8 @@ table {
     border-spacing: 0;
 }
 
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-html,
-body {
+/* --------Page Layout-------- */
+html, body {
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -81,37 +53,46 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* ---Particles Container----------- */
 #particles {
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
+/* -----Intro Section-------- */
 #intro {
     position: absolute;
     left: 0;
     top: 50%;
-    padding: 0 10px;
     width: 100%;
+    padding: 0 10px;
     text-align: center;
 }
 
+/*--------Typography------------ */
+h2#site-header {
+    font-family: 'Marsek', sans-serif;
+    font-weight: 900;
+}
+
+h3#typed {
+    font-family: 'Fira Code', monospace;
+    font-weight: 400;
+}
+
 h2 {
-    text-transform: uppercase;
     font-size: 50px;
-    font-weight: 120;
-    color: #ffffff;
+    text-transform: uppercase;
     letter-spacing: 0.05em;
     display: inline;
 }
 
 h3 {
     font-size: 30px;
-    font-weight: 120;
-    color: #ffffff;
+    font-style: italic;
     letter-spacing: 0.01em;
     display: inline;
-    font-style: italic;
 }
 
 .typed-cursor {
@@ -122,57 +103,37 @@ h3 {
 h1::after {
     content: '';
     width: 80px;
-    display: block;
-    background: #fff;
     height: 10px;
+    background: #fff;
+    display: block;
     margin: 30px auto;
-    line-height: 1.1;
 }
 
 p {
-    margin: 0 0 30px 0;
     font-size: 24px;
+    margin-bottom: 30px;
     font-family: 'Roboto', sans-serif;
 }
 
+/* --- Responsive (Mobile)----------- */
 @media only screen and (max-width: 1000px) {
     h1 {
         font-size: 15px;
     }
-}
 
-@media only screen and (max-width: 100px) {
-    h1 {
-        font-size: 15px;
-    }
-    h1::after {
-        height: 8px;
-    }
-}
-
-@media only screen and (max-width: 100px) {
-    #intro {
-        padding: 0 10px;
-    }
-    h1 {
-        font-size: 15px;
-    }
     h1::after {
         height: 6px;
     }
+
+    #intro {
+        padding: 0 10px;
+    }
+
     p {
         font-size: 18px;
     }
+
     .btn {
         font-size: 16px;
-    }
-}
-
-@media only screen and (max-width: 100px) {
-    h1 {
-        font-size: 15px;
-    }
-    h1::after {
-        height: 4px;
     }
 }
