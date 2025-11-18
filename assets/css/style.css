@@ -1,6 +1,7 @@
-/* -- Imports---*/
+/* -- Imports --- */
 @import url('http://fonts.cdnfonts.com/css/marsek');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap');
+
 
 /* ------Global Reset & Base---- */
 * {
@@ -13,18 +14,22 @@
     vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
+    
 }
+
 
 ol, ul {
     list-style: none;
 }
 
+
 blockquote, q {
     quotes: none;
 }
+
 
 blockquote::before,
 blockquote::after,
@@ -33,107 +38,186 @@ q::after {
     content: '';
 }
 
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
 
 /* --------Page Layout-------- */
 html, body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
+
 
 body {
     background: #000010;
     font-family: 'Montserrat', sans-serif;
     color: #fff;
-    line-height: 1.3;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
 }
 
-/* ---Particles Container----------- */
+
+/* -----Particles Container----------- */
 #particles {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    z-index: -1; /* Particles behind text */
     overflow: hidden;
 }
 
-/* -----Intro Section-------- */
-#intro {
-    position: absolute;
-    left: 0;
-    top: 50%;
+
+.pg-canvas {
     width: 100%;
-    padding: 0 10px;
-    text-align: center;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
-/*--------Typography------------ */
+
+/* Optional subtle particle animation */
+#particles {
+    animation: particleAnimation 30s infinite linear;
+}
+
+
+@keyframes particleAnimation {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+
+/* -----Intro Section-------- */
+#intro {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1; /* Ensure text is above particles */
+    padding: 0 20px;
+}
+
+
+/* --------Typography-------- */
 h2#site-header {
     font-family: 'Marsek', sans-serif;
     font-weight: 900;
+    font-size: 6vw; /* Responsive font size */
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
 }
+
 
 h3#typed {
     font-family: 'Fira Code', monospace;
     font-weight: 400;
-}
-
-h2 {
-    font-size: 50px;
-    text-transform: uppercase;
+    font-size: 3vw; /* Responsive font size */
+    color: #fff;
     letter-spacing: 0.05em;
-    display: inline;
+    margin-bottom: 20px;
 }
 
-h3 {
-    font-size: 30px;
-    font-style: italic;
-    letter-spacing: 0.01em;
-    display: inline;
-}
 
 .typed-cursor {
     font-size: 40px;
     color: #715cbd;
 }
 
+
 h1::after {
     content: '';
     width: 80px;
-    height: 10px;
-    background: #fff;
+    height: 5px;
+    background: #715cbd;
     display: block;
     margin: 30px auto;
 }
 
+
 p {
-    font-size: 24px;
-    margin-bottom: 30px;
+    font-size: 1.5rem;
     font-family: 'Roboto', sans-serif;
+    color: #fff;
+    margin-bottom: 30px;
+    line-height: 1.6;
 }
 
-/* --- Responsive (Mobile)----------- */
+
+/* -----Buttons--------- */
+.btn {
+    padding: 12px 24px;
+    background-color: #715cbd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.btn:hover {
+    background-color: #57408e;
+    transform: scale(1.05);
+}
+
+
+.btn:focus {
+    outline: 3px solid #715cbd; /* Accessibility */
+}
+
+
+/* --- Responsive Design -------- */
 @media only screen and (max-width: 1000px) {
-    h1 {
-        font-size: 15px;
+    h2#site-header {
+        font-size: 8vw;
+    }
+
+    h3#typed {
+        font-size: 5vw;
     }
 
     h1::after {
-        height: 6px;
-    }
-
-    #intro {
-        padding: 0 10px;
+        height: 4px;
     }
 
     p {
-        font-size: 18px;
+        font-size: 1.2rem;
+        line-height: 1.5;
     }
 
     .btn {
-        font-size: 16px;
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h2#site-header {
+        font-size: 10vw;
+    }
+
+    h3#typed {
+        font-size: 6vw;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.4;
     }
 }
