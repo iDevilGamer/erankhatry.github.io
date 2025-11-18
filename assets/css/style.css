@@ -1,121 +1,33 @@
-/* --- Imports --- */
-@import url('http://fonts.cdnfonts.com/css/marsek');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap');
-
 /* --- Reset & Base --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: #000010;
-    font-family: 'Montserrat', sans-serif;
-    color: #fff;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #000010; font-family: 'Montserrat', sans-serif; color: #fff; line-height: 1.5; -webkit-font-smoothing: antialiased; }
 
 /* --- Particles Container --- */
-#particles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Behind content */
-    overflow: hidden;
-}
+#particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
 
 /* --- Intro Section --- */
-#intro {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 1; /* Above particles */
-    padding: 0 20px;
-}
+#intro { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 1; padding: 0 20px; }
 
 /* --- Typography --- */
-h2#site-header {
-    font-family: 'Marsek', sans-serif;
-    font-weight: 900;
-    font-size: 6vw;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 10px;
-}
+h2#site-header { font-family: 'Marsek', sans-serif; font-weight: 900; font-size: 6vw; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+h3#typed { font-family: 'Fira Code', monospace; font-weight: 400; font-size: 3vw; letter-spacing: 0.05em; margin-bottom: 20px; }
+.typed-cursor { font-size: 40px; color: #715cbd; }
 
-h3#typed {
-    font-family: 'Fira Code', monospace;
-    font-weight: 400;
-    font-size: 3vw;
-    color: #fff;
-    letter-spacing: 0.05em;
-    margin-bottom: 20px;
-}
-
-.typed-cursor {
-    font-size: 40px;
-    color: #715cbd;
-}
-
-h1::after {
-    content: '';
-    width: 80px;
-    height: 5px;
-    background: #715cbd;
-    display: block;
-    margin: 30px auto;
-}
-
-p {
-    font-size: 1.5rem;
-    font-family: 'Roboto', sans-serif;
-    color: #fff;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
+/* Social Icons */
+#icons a { color: white; font-size: 2em; margin: 0 10px; text-decoration: none; }
 
 /* --- Buttons --- */
-.btn {
-    padding: 12px 24px;
-    background-color: #715cbd;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn:hover {
-    background-color: #57408e;
-    transform: scale(1.05);
-}
-
-.btn:focus {
-    outline: 3px solid #715cbd;
-}
+.btn { padding: 12px 24px; background-color: #715cbd; color: #fff; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease; }
+.btn:hover { background-color: #57408e; transform: scale(1.05); }
+.btn:focus { outline: 3px solid #715cbd; }
 
 /* --- Responsive Design --- */
 @media only screen and (max-width: 1000px) {
     h2#site-header { font-size: 8vw; }
     h3#typed { font-size: 5vw; }
-    h1::after { height: 4px; }
-    p { font-size: 1.2rem; line-height: 1.5; }
     .btn { font-size: 0.9rem; padding: 10px 20px; }
 }
-
 @media only screen and (max-width: 600px) {
     h2#site-header { font-size: 10vw; }
     h3#typed { font-size: 6vw; }
-    p { font-size: 1rem; line-height: 1.4; }
 }
